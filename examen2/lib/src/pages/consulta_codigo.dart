@@ -5,8 +5,13 @@ import 'package:examen2/src/const/api_constanst.dart';
 import 'package:examen2/src/model/country.dart';
 
 class ConsultaCodigoScreen extends StatefulWidget {
+  const ConsultaCodigoScreen({super.key});
+
   @override
-  _ConsultaCodigoScreenState createState() => _ConsultaCodigoScreenState();
+  // ignore: library_private_types_in_public_api
+  _ConsultaCodigoScreenState createState() {
+    return _ConsultaCodigoScreenState();
+  }
 }
 
 class _ConsultaCodigoScreenState extends State<ConsultaCodigoScreen> {
@@ -16,20 +21,20 @@ class _ConsultaCodigoScreenState extends State<ConsultaCodigoScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Consulta por Código de País")),
+      appBar: AppBar(title: const Text("Consulta por Código de País")),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
             TextField(
               controller: _controller,
-              decoration: InputDecoration(labelText: "Código del País (cca2 o cca3)"),
+              decoration: const InputDecoration(labelText: "Código del País (cca2 o cca3)"),
             ),
             ElevatedButton(
               onPressed: () {
                 _consultarPaisPorCodigo(_controller.text.trim());
               },
-              child: Text("Consultar"),
+              child: const Text("Consultar"),
             ),
             if (pais != null) ...[
               Text("Nombre Común: ${pais!.name.common}"),
@@ -56,7 +61,7 @@ class _ConsultaCodigoScreenState extends State<ConsultaCodigoScreen> {
       setState(() {
         pais = null;
       });
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
         content: Text("País no encontrado"),
       ));
     }
