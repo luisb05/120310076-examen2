@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:examen2/src/pages/consulta_nombre.dart';
-import 'package:examen2/src/pages/consulta_codigo.dart';
 
 class MenuScreen extends StatefulWidget {
   @override
@@ -9,7 +7,6 @@ class MenuScreen extends StatefulWidget {
 
 class _MenuScreenState extends State<MenuScreen> {
   String? _selectedOption = 'Consultar por Nombre';
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,15 +34,9 @@ class _MenuScreenState extends State<MenuScreen> {
             ElevatedButton(
               onPressed: () {
                 if (_selectedOption == 'Consultar por Nombre') {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => ConsultaNombreScreen()),
-                  );
+                  Navigator.pushNamed(context, 'Consultar por Nombre');
                 } else if (_selectedOption == 'Consultar por Código') {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => ConsultaCodigoScreen()),
-                  );
+                  Navigator.pushNamed(context, 'Consultar por Código');
                 }
               },
               child: const Text("Ir a Consulta"),

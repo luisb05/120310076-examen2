@@ -1,4 +1,4 @@
-import 'package:examen2/src/pages/home.dart';
+import 'package:examen2/src/routes/routes.dart';
 import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
@@ -9,8 +9,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Consulta de Países',
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: MenuScreen(),
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      initialRoute: '/',  // Ruta inicial
+      routes: getRoutes(),  // Asignación de rutas
     );
   }
 }
